@@ -201,7 +201,7 @@ function(t) {
         uid = '0c01865cce6862fe6359edc6b',
         IP,
         logged = false,
-        cashe = encodeURIComponent('https://lampa.mx');
+        cashe = encodeURIComponent('http%3A%2F%2Flampa.stream');
     console.log('Modss', 'init', 'loaded');
 
     var network = new Lampa.Reguest();
