@@ -197,11 +197,11 @@ function(t) {
         menu_list = [],
         vip = false,
         leftVipD = '',
-        user_id = '',
+        user_id = '268242',
         uid = '0c01865cce6862fe6359edc6b',
         IP,
         logged = false,
-        cashe = encodeURIComponent('http://modss.tv/online?email=b2theXNoaXRAZ21haWwuY29t&logged=true&cache=77fc638afd85285d36683dfc5523805c61a2e6247e13d915a374c319e4278a2187b8348f570303cbf60891f0d4b7ba83&reset=0.990883648478954');
+        cashe = encodeURIComponent('https://lampa.mx');
     console.log('Modss', 'init', 'loaded');
 
     var network = new Lampa.Reguest();
