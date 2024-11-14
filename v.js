@@ -218,7 +218,7 @@ function(t) {
         uid: uid,
         ips: '88.119.166.223',
         cashe: cashe,
-        id: 'undefined',
+        id: 'b2theXNoaXRAZ21haWwuY29t',
         auth: logged
     }, {
         dataType: 'text'
