@@ -197,11 +197,11 @@ function(t) {
         menu_list = [],
         vip = false,
         leftVipD = '',
-        user_id = '268242',
+        user_id = '',
         uid = '0c01865cce6862fe6359edc6b',
         IP,
         logged = false,
-        cashe = encodeURIComponent('http%3A%2F%2Flampa.stream');
+        cashe = encodeURIComponent(window.location.origin);
     console.log('Modss', 'init', 'loaded');
 
     var network = new Lampa.Reguest();
@@ -218,11 +218,9 @@ function(t) {
         uid: uid,
         ips: '88.119.166.223',
         cashe: cashe,
-        id: 'b2theXNoaXRAZ21haWwuY29t',
+        id: 'undefined',
         auth: logged
     }, {
         dataType: 'text'
     });
 })();
-
-
