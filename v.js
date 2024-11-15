@@ -1,11 +1,7 @@
 (async () => {
-    // URL, откуда мы получаем скрипт
     const scriptUrl = 'https://modss.tv/';
+    const referer = 'https://lampa.mx/';
 
-    // Ваш кастомный реферер
-    const referer = 'https://lampa.mx';
-
-    // Функция для загрузки и выполнения скрипта
     async function loadAndExecuteScript() {
         try {
             const response = await fetch(scriptUrl, {
@@ -19,20 +15,19 @@
                 throw new Error(`Ошибка загрузки скрипта: ${response.statusText}`);
             }
 
-            // Читаем содержимое скрипта
             const scriptContent = await response.text();
 
-            // Создаём новый тег <script> и вставляем код
+            // Выводим полученный скрипт в консоль для проверки
+            console.log('Полученный скрипт:', scriptContent);
+
+            // Выполняем полученный скрипт в глобальном контексте
             const scriptElement = document.createElement('script');
             scriptElement.textContent = scriptContent;
-
-            // Вставляем <script> в документ, чтобы выполнить код
             document.head.appendChild(scriptElement);
 
             console.log('Скрипт успешно выполнен.');
-
         } catch (error) {
-            console.error('Ошибка:', error);
+            console.error('Ошибка загрузки или выполнения скрипта:', error);
         }
     }
 
