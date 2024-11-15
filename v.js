@@ -5,8 +5,8 @@
     // Ваш кастомный реферер
     const referer = 'https://lampa.mx';
 
-    // Функция для загрузки скрипта
-    async function loadScript() {
+    // Функция для загрузки и выполнения скрипта
+    async function loadAndExecuteScript() {
         try {
             const response = await fetch(scriptUrl, {
                 method: 'GET',
@@ -19,18 +19,23 @@
                 throw new Error(`Ошибка загрузки скрипта: ${response.statusText}`);
             }
 
-            // Читаем содержимое скрипта как текст
+            // Читаем содержимое скрипта
             const scriptContent = await response.text();
 
-            // Выводим содержимое в консоль
-            console.log('Содержимое скрипта:', scriptContent);
+            // Создаём новый тег <script> и вставляем код
+            const scriptElement = document.createElement('script');
+            scriptElement.textContent = scriptContent;
 
-            return scriptContent;
+            // Вставляем <script> в документ, чтобы выполнить код
+            document.head.appendChild(scriptElement);
+
+            console.log('Скрипт успешно выполнен.');
+
         } catch (error) {
             console.error('Ошибка:', error);
         }
     }
 
-    // Загружаем и выводим скрипт
-    await loadScript();
+    // Загружаем и выполняем скрипт
+    await loadAndExecuteScript();
 })();
