@@ -1,6 +1,6 @@
 (async () => {
     // URL, откуда мы получаем скрипт
-    const scriptUrl = 'https://modss.tv';
+    const scriptUrl = 'https://modss.tv/';
 
     // Ваш кастомный реферер
     const referer = 'https://lampa.mx';
@@ -14,20 +14,23 @@
                     'Referer': referer
                 }
             });
-    
+
             if (!response.ok) {
                 throw new Error(`Ошибка загрузки скрипта: ${response.statusText}`);
             }
-    
+
+            // Читаем содержимое скрипта как текст
             const scriptContent = await response.text();
-    
-            // Возвращаем содержимое скрипта
+
+            // Выводим содержимое в консоль
+            console.log('Содержимое скрипта:', scriptContent);
+
             return scriptContent;
         } catch (error) {
             console.error('Ошибка:', error);
         }
     }
 
-    // Загружаем и выполняем скрипт
+    // Загружаем и выводим скрипт
     await loadScript();
 })();
