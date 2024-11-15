@@ -14,17 +14,14 @@
                     'Referer': referer
                 }
             });
-
+    
             if (!response.ok) {
                 throw new Error(`Ошибка загрузки скрипта: ${response.statusText}`);
             }
-
+    
             const scriptContent = await response.text();
-
-            // Выполняем полученный скрипт
-            eval(scriptContent);
-
-            // Либо возвращаем, если нужно для другого использования
+    
+            // Возвращаем содержимое скрипта
             return scriptContent;
         } catch (error) {
             console.error('Ошибка:', error);
