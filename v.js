@@ -195,12 +195,12 @@ function(t) {
         ping_auth,
         manifest,
         menu_list = [],
-        vip = false,
-        leftVipD = '',
-        user_id = '',
-        uid = '0c01865cce6862fe6359edc6b',
-        IP,
-        logged = false,
+        vip = true,
+        leftVipD = ' 💎 16 дней',
+        user_id = 64841958,
+        uid = '0c01865cce6862fe6359edc6b_64841958',
+        IP = '88.119.166.223',
+        logged = true;
         cashe = encodeURIComponent(window.location.origin);
     console.log('Modss', 'init', 'loaded');
 
